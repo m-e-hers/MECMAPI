@@ -1,0 +1,28 @@
+{
+  "name": "menecmapi",
+  "version": "0.1.0",
+  "description": "Manage Engine ECMA script API",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-e-hers/MENECMAPI.git"
+  },
+  "keywords": [
+    "ManageEngine",
+    "Manage",
+    "Engine",
+    "ECMA",
+    "script",
+    "API",
+    "node.js"
+  ],
+  "author": "grenudi",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/m-e-hers/MENECMAPI/issues"
+  },
+  "homepage": "https://github.com/m-e-hers/MENECMAPI#readme"
+}
