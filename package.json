@@ -4,7 +4,9 @@
   "description": "Manage Engine ECMA script API",
   "main": "index.js",
   "scripts": {
-    "test": "none"
+    "test": "none",
+    "build": "webpack --config webpack.prod.config.js",
+    "dev": "webpack --config webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/m-e-hers/MENECMAPI/issues"
   },
-  "homepage": "https://github.com/m-e-hers/MENECMAPI#readme"
+  "homepage": "https://github.com/m-e-hers/MENECMAPI#readme",
+  "devDependencies": {
+    "webpack": "^5.24.3"
+  }
 }
