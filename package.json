@@ -1,0 +1,33 @@
+{
+  "name": "mecmapi",
+  "version": "0.1.0",
+  "description": "ManageEngine ECMA API - javascript library to work with ManageEngine (ServiceDesk Plus) REST API",
+  "main": "dist/mecmapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-e-hers/MECMAPI.git"
+  },
+  "keywords": [
+    "mecmapi",
+    "manageengine",
+    "ME",
+    "js",
+    "javascript",
+    "REST",
+    "API",
+    "ServiceDesk",
+    "Plus",
+    "ECMAScript",
+    "library",
+    "lib"
+  ],
+  "author": "grenudi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m-e-hers/MECMAPI/issues"
+  },
+  "homepage": "https://github.com/m-e-hers/MECMAPI#readme"
+}
