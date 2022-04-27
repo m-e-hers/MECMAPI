@@ -1,16 +1,10 @@
-// const ME = {
-// 	requests:{
-// 		getById: (id)=>{
-// 			return "obj";
-// 		}
-// 	}
-// };
+const mecmapi = {
+	test: ()=>{alert ("LOADED 2");}
+};
 
-// export {
-// 	ME
-// };
 
-alert ("LOADED 2");
+
+export default mecmapi;
 /*
 
 
