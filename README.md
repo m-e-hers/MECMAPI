@@ -1,6 +1,6 @@
 # MECMAPI
 ![npm](https://img.shields.io/npm/v/mecmapi?label=npm%40latest&logo=MECMAPI)  
-Manage Engine ECMA Script (node.js) API Library/Framework to work with REST API of ServiceDesk Plus
+Manage Engine ECMA Script (node.js) [UMD](https://github.com/umdjs/umd) module/Library/Framework to work with REST API of ServiceDesk Plus
 
 
 
