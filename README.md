@@ -19,4 +19,18 @@ https://cdn.jsdelivr.net/npm/mecmapi@0.1.1/mecmapi.js
 ```
 npm install mecmapi --save
 ```
-## USAGE
+## USAGE EXAMPLE
+```JS
+const mecmapi = require("mecmapi");
+const de = require("dotenv");
+de.config();
+
+const dconf = {
+    technician_key: process.env.TECHNICIAN_KEY,
+    target_domain: "https://" + process.env.ME_DOMAIN
+}
+
+mecmapi.request.viewRequest({ ...dconf, request_id: 293141 })
+    .then(res => console.log("RESPONSE: ", res));
+
+```
