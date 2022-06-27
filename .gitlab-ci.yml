@@ -1,0 +1,43 @@
+# .gitlab-ci.yml
+image: "node:16-slim"
+
+stages:
+  - publish
+
+publish:
+  stage: publish
+  variables:
+      GIT_STRATEGY: clone
+  before_script:
+    - apt-get update && apt-get install git -y
+  script:
+    # Конфигурация npm
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+    
+    # Конфигурация git
+    - git config --global user.email &quot;${GIT_USER_EMAIL}&quot;
+    - git config --global user.name &quot;${GIT_USER_NAME}&quot;
+
+    # Установка зависимостей и сборка проекта
+    - yarn
+    - yarn build
+
+    # Определение новой версии npm пакета и генерация CHANGELOG.md файла
+    - yarn standard-version
+    - commitMessage=$(git log -1 --pretty=%B)
+    - tagname=$(git tag --points-at HEAD)
+    - version=${tagname:1}
+
+    # Решение проблемы с циклическим вызовом
+    - git tag -d $tagname
+    - git commit --amend -m &quot;[ci skip] ${commitMessage}&quot; --no-verify
+    - git tag -a $tagname -m ''
+
+    # Публикация в gitlab
+    - git push &lt;https://${GIT_SYNC_USER}:${GIT_SYNC_TOKEN}@git.nlmk.com/$CI_PROJECT_PATH.git&gt; --follow-tags master:master
+
+    # Публикация в npm
+    - yarn publish --new-version $version --verbose
+
+  only:
+    - master
