@@ -15,8 +15,8 @@ publish:
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
     # Конфигурация git
-    - git config --global user.email &quot;${GIT_USER_EMAIL}&quot;
-    - git config --global user.name &quot;${GIT_USER_NAME}&quot;
+    - git config --global user.email ";${GIT_USER_EMAIL}";
+    - git config --global user.name ";${GIT_USER_NAME}";
 
     # Установка зависимостей и сборка проекта
     - yarn
@@ -30,11 +30,11 @@ publish:
 
     # Решение проблемы с циклическим вызовом
     - git tag -d $tagname
-    - git commit --amend -m &quot;[ci skip] ${commitMessage}&quot; --no-verify
+    - git commit --amend -m ";[ci skip] ${commitMessage}"; --no-verify
     - git tag -a $tagname -m ''
 
     # Публикация в gitlab
-    - git push &lt;https://${GIT_SYNC_USER}:${GIT_SYNC_TOKEN}@git.nlmk.com/$CI_PROJECT_PATH.git&gt; --follow-tags master:master
+    - git push "https://${GIT_SYNC_USER}:${GIT_SYNC_TOKEN}@git.nlmk.com/$CI_PROJECT_PATH.git" --follow-tags main:main
 
     # Публикация в npm
     - yarn publish --new-version $version --verbose
