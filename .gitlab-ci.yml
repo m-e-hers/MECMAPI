@@ -7,13 +7,13 @@ stages:
 publish:
   stage: publish
   variables:
-      GIT_STRATEGY: clone
+    GIT_STRATEGY: clone
   before_script:
     - apt-get update && apt-get install git -y
   script:
     # Конфигурация npm
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-    
+
     # Конфигурация git
     - git config --global user.email &quot;${GIT_USER_EMAIL}&quot;
     - git config --global user.name &quot;${GIT_USER_NAME}&quot;
@@ -40,4 +40,4 @@ publish:
     - yarn publish --new-version $version --verbose
 
   only:
-    - master
+    - main
