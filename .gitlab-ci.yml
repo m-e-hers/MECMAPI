@@ -34,7 +34,7 @@ publish:
 
     # Публикация в gitlab
     - git branch -a 
-    - git push "https://${GIT_SYNC_USER}:${GIT_SYNC_TOKEN}@${CI_PROJECT_PATH}.git" --follow-tags main
+    - git push "https://${GIT_SYNC_USER}:${GIT_SYNC_TOKEN}@${CI_PROJECT_PATH}.git" --follow-tags HEAD:main
 
     # Публикация в npm
     - npm publish --new-version $version --verbose
