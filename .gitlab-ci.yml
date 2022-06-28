@@ -20,7 +20,6 @@ publish:
 
     # Установка зависимостей и сборка проекта
     - yarn
-    - yarn build
 
     # Определение новой версии npm пакета и генерация CHANGELOG.md файла
     - yarn standard-version
