@@ -1,28 +1,41 @@
 {
-  "name": "menecmapi",
-  "version": "0.1.0",
-  "description": "Manage Engine ECMA script API",
+  "name": "mecmapi",
+  "version": "0.1.333",
+  "description": "ManageEngine ECMA API - javascript library to work with ManageEngine (ServiceDesk Plus) REST API",
   "main": "index.js",
   "scripts": {
-    "test": "none"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/m-e-hers/MENECMAPI.git"
+    "url": "git+https://github.com/m-e-hers/MECMAPI.git"
   },
   "keywords": [
-    "ManageEngine",
-    "Manage",
-    "Engine",
-    "ECMA",
-    "script",
+    "mecmapi",
+    "manageengine",
+    "ME",
+    "js",
+    "javascript",
+    "REST",
     "API",
-    "node.js"
+    "ServiceDesk",
+    "Plus",
+    "ECMAScript",
+    "library",
+    "lib"
   ],
   "author": "grenudi",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/m-e-hers/MENECMAPI/issues"
+    "url": "https://github.com/m-e-hers/MECMAPI/issues"
   },
-  "homepage": "https://github.com/m-e-hers/MENECMAPI#readme"
+  "homepage": "https://github.com/m-e-hers/MECMAPI#readme",
+  "dependencies": {
+    "node-fetch": "=2.6.7"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0",
+    "standard-version": "^9.5.0"
+  }
 }
