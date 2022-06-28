@@ -33,6 +33,7 @@ publish:
     - git tag -a $tagname -m ''
 
     # Публикация в gitlab
+    - git branch -a 
     - git push "https://${GIT_SYNC_USER}:${GIT_SYNC_TOKEN}@${CI_PROJECT_PATH}.git" --follow-tags main
 
     # Публикация в npm
