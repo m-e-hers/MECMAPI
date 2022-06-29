@@ -9,7 +9,7 @@ publish:
   variables:
     GIT_STRATEGY: clone
   before_script:
-    - apt-get update && apt-get install git -y
+    - apt-get update && apt-get install git curl -y
   script:
     # Конфигурация npm
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
@@ -39,7 +39,7 @@ publish:
     # Публикация в npm
     - npm publish # "${NPM_PACKAGE_TITLE}" --new-version $version --verbose
     - echo "\n\n================ SUCCESS ================ \n\n"
-    - wget -H "Title:MECMAPI npm publish SUCCESS" -H "Priority:medium" -H "Tags:heavy_check_mark" -d "MECMAPI:published a new version to npm ($tagname)" ntfy.sh/gl_mecmapi_cicd_npm_publish
+    - curl -H "Title:MECMAPI npm publish SUCCESS" -H "Priority:medium" -H "Tags:heavy_check_mark" -d "MECMAPI:published a new version to npm ($tagname)" ntfy.sh/gl_mecmapi_cicd_npm_publish
 
   only:
     - main
