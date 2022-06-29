@@ -34,4 +34,3 @@ mecmapi.request.viewRequest({ ...dconf, request_id: 293141 })
     .then(res => console.log("RESPONSE: ", res));
 
 ```
-testing ci/cd
