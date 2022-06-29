@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.340](https://github.com/m-e-hers/MECMAPI/compare/v0.1.339...v0.1.340) (2022-06-29)
+
+
+### Features
+
+* CI/CD complete ([5dc674a](https://github.com/m-e-hers/MECMAPI/commit/5dc674a7f09166809d1f1ae355e558dfbc8f3c84))
+
 ### [0.1.339](https://github.com/m-e-hers/MECMAPI/compare/v0.1.338...v0.1.339) (2022-06-29)
 
 ### [0.1.338](https://github.com/m-e-hers/MECMAPI/compare/v0.1.337...v0.1.338) (2022-06-29)
