@@ -39,7 +39,7 @@ publish:
     # Публикация в npm
     - npm publish # "${NPM_PACKAGE_TITLE}" --new-version $version --verbose
     - echo "\n\n================ SUCCESS ================ \n\n"
-    - curl -H "Title:MECMAPI npm publish SUCCESS" -H "Priority:high" -H "Tags:heavy_check_mark" -d "MECMAPI:published a new version to npm ($tagname)" ntfy.sh/gl_mecmapi_cicd_npm_publish
+    - curl -H "Title:MECMAPI npm publish SUCCESS" -H "Priority:high" -H "Tags:heavy_check_mark" -d "MECMAPI:published a new version to npm ($tagname)" "ntfy.sh/${NTFY_PUBLISH}"
 
   only:
     - main
