@@ -73,20 +73,24 @@
 
         },
         request: {
-            viewRequest: async (config) => {
+            get: async (config) => {
                 const response = await fetch(furl(config), dfc(config));
                 return response.json(); // parses JSON response into native JavaScript objects
             },
-            viewAllRequests: async (config) => {
+            getAll: async (config) => {
                 const response = await fetch(furl(config), dfc(config));
                 return response.json(); // parses JSON response into native JavaScript objects
             }
+        },
+        worklog: {
+            add: () => null,
+            get: () => null,
+            update: () => null,
+            remove: () => null
+
         }
     };
 
-    // Just return a value to define the module export.
-    // This example returns an object, but the module
-    // can return a function as the exported value.
     return mecmapi;
 }));
 
