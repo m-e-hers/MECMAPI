@@ -26,6 +26,7 @@ publish:
     - commitMessage=$(git log -1 --pretty=%B)
     - tagname=$(git tag --points-at HEAD)
     - version=${tagname:1}
+    - npm run build
 
     # Решение проблемы с циклическим вызовом
     - git tag -d $tagname
