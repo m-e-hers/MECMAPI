@@ -15,7 +15,7 @@
 // can remove the `root` use and the passing `this` as the first arg to
 // the top function.
 
-(function (root, factory) {
+const MECMAPI = (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define(['b'], factory);
@@ -92,7 +92,7 @@
     };
 
     return mecmapi;
-}));
+}))();
 
 
 
