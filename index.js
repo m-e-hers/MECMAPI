@@ -15,7 +15,7 @@
 // can remove the `root` use and the passing `this` as the first arg to
 // the top function.
 
-const MECMAPI = (function (root, factory) {
+(function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define(['b'], factory);
@@ -26,7 +26,7 @@ const MECMAPI = (function (root, factory) {
         module.exports = factory(require('node-fetch'));
     } else {
         // Browser globals (root is window)
-        root.returnExports = factory(root.b);
+        root.MECMAPI = factory(root.b);
     }
 }(typeof self !== 'undefined' ? self : this, function (b) {
     // Use b in some fashion.
