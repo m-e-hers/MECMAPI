@@ -92,7 +92,7 @@ const MECMAPI = (function (root, factory) {
     };
 
     return mecmapi;
-}))();
+}));
 
 
 
