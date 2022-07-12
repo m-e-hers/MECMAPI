@@ -1,6 +1,6 @@
 {
   "name": "mecmapi",
-  "version": "0.1.342",
+  "version": "0.1.343",
   "description": "ManageEngine ECMA API - javascript library to work with ManageEngine (ServiceDesk Plus) REST API",
   "main": "index.js",
   "scripts": {

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.343](https://github.com/m-e-hers/MECMAPI/compare/v0.1.342...v0.1.343) (2022-07-12)
+
+
+### Features
+
+* cdn support. hopefuly.. ([6038add](https://github.com/m-e-hers/MECMAPI/commit/6038addc32b041de0c05b2b2e524111db1007641))
+
 ### [0.1.342](https://github.com/m-e-hers/MECMAPI/compare/v0.1.341...v0.1.342) (2022-07-01)
 
 
