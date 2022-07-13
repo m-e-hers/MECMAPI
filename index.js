@@ -26,7 +26,7 @@
         module.exports = factory(require('node-fetch'));
     } else {
         // Browser globals (root is window)
-        root.MECMAPI = factory(root.b);
+        root.MECMAPI = factory(root.fetch);
     }
 }(typeof self !== 'undefined' ? self : this, function (b) {
     // Use b in some fashion.
