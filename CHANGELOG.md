@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/m-e-hers/MECMAPI/compare/v0.1.345...v0.2.1) (2022-10-22)
+
+
+### Features
+
+* getRequest, updateRequest, addNote ([429a757](https://github.com/m-e-hers/MECMAPI/commit/429a75711fba861e1bc0007d6a9ba506a8c2c76b))
+
+
+### Bug Fixes
+
+* merge ([a293799](https://github.com/m-e-hers/MECMAPI/commit/a2937991efd8ad0ffdc26fdd088a11582dd1c0c0))
+
 ### [0.1.345](https://github.com/m-e-hers/MECMAPI/compare/v0.1.344...v0.1.345) (2022-07-12)
 
 
