@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.345](https://github.com/m-e-hers/MECMAPI/compare/v0.1.344...v0.1.345) (2022-07-12)
+
+
+### Bug Fixes
+
+* browser export now works ([c599fb7](https://github.com/m-e-hers/MECMAPI/commit/c599fb734fc825986683366bf735800e4c6bd1a3))
+
 ### [0.1.344](https://github.com/m-e-hers/MECMAPI/compare/v0.1.343...v0.1.344) (2022-07-12)
 
 
