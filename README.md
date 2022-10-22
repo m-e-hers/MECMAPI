@@ -20,19 +20,45 @@ https://cdn.jsdelivr.net/npm/mecmapi@0.1.1/mecmapi.js
 npm install mecmapi --save
 ```
 ## USAGE EXAMPLE
+### browser
 ```JS
-const mecmapi = require("mecmapi");
-const de = require("dotenv");
-de.config();
+const mecmapi = new window.mecmapi({});
 
-const dconf = {
-    technician_key: process.env.TECHNICIAN_KEY,
-    target_domain: "https://" + process.env.ME_DOMAIN
+const scrProcessing = async (requestId, request) => {
+    const noteDescription = `В ОБРАБОТКЕ  -//-  PROCESSING  ©`;
+
+    const res = await mecmapi.updateRequest(requestId, {
+        "group": {
+            "name": "IT"
+        },
+        "request_type": {
+            "name": "Request"
+        },
+        "level": {
+            "name": "Coordinators"
+        },
+        "status": {
+            "name": "Processing"
+        },
+        "udf_fields": {
+            "udf_pick_1205": await vut.getUpdatedCoordinator()
+        },
+        "technician": null,
+        ...request
+    });
+    await mecmapi.addNote(requestId, {
+        "mark_first_response": true,
+        "add_to_linked_requests": false,
+        "notify_technician": false,
+        "show_to_requester": false,
+        "description": noteDescription
+    })
 }
 
-mecmapi.request.viewRequest({ ...dconf, request_id: 293141 })
-    .then(res => console.log("RESPONSE: ", res));
-
+const rid = vut.getRequestId();
+scrProcessing(rid).then(() => {
+    vut.gotoRequest(rid);
+});
 ```
 
 ```
