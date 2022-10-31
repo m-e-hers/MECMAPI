@@ -106,6 +106,13 @@
         const response = await this.httpRequestAsync(url, _this.config.httpRequest);
         return JSON.parse(response.response); // parses JSON response into native JavaScript objects
     };
+    mecmapi.prototype.searchRequest = async function (inputData) {
+        const _this = this;
+        const body = 'input_data=' + encodeURIComponent(JSON.stringify(inputData));
+        const url = `${_this.config.url.api}/requests?${body}`;
+        const response = await this.httpRequestAsync(url, _this.config.httpRequest);
+        return JSON.parse(response.response); // parses JSON response into native JavaScript objects
+    };
     mecmapi.prototype.updateRequest = async function (requestId, request) {
         const _this = this;
         // console.log("THIS IN SET: ", this);
@@ -143,7 +150,7 @@
             body: body
         });
         return JSON.parse(response.response); // parses JSON response into native JavaScript objects
-    }
+    };
     mecmapi.prototype.worklog = {
         add: () => null,
         get: () => null,
@@ -151,6 +158,95 @@
         remove: () => null
 
     };
+    mecmapi.prototype.addWorklog = async function (requestId, { tratimedif, description, name, userId }) {
+        const _this = this;
+        const etime = new Date().getTime();
+        const stime = etime - tratimedif;
+        const worklog = {
+            "owner": {
+                "id": userId/*,
+			      "id": "1856265534885993"*/
+            },
+            "description": `"${description}"`,
+            "mark_first_response": true,
+            "start_time": {
+                "value": stime
+            },
+            "end_time": {
+                "value": etime
+            }
+            // ,
+            // "type": {
+            //     "name": `"${name}"`
+            // }
+            // "include_nonoperational_hours": false,
+            // "other_charge": 1343434.4333,
+            // "recorded_time": {
+            //   "value": "1478758440000"
+            // },
+            // "tech_charge": 1343434.4333,
+        };
+        const inputData = { "worklog": worklog };
+        const body = 'input_data=' + JSON.stringify(inputData);
+        const url = `${_this.config.url.api}requests/${requestId}/worklogs`//?${body}`;
+        const response = await this.httpRequestAsync(url, {
+            ..._this.config.httpRequest,
+            headers: {
+                ..._this.config.httpHeaders,
+                'Content-Type': "application/x-www-form-urlencoded"
+                // 'Content-Type': "application/json"
+            },
+            method: "POST",
+            body: body
+        });
+        return JSON.parse(response.response); // parses JSON response into native JavaScript objects
+    };
+
+    mecmapi.prototype.getWorklogs = async function (requestId) {
+        const _this = this;
+        const url = `${_this.config.url.api}requests/${requestId}/worklogs`//?${body}`;
+        const response = await this.httpRequestAsync(url, {
+            ..._this.config.httpRequest,
+            headers: {
+                ..._this.config.httpHeaders,
+                'Content-Type': "application/x-www-form-urlencoded"
+                // 'Content-Type': "application/json"
+            },
+            method: "GET",
+            body: body
+        });
+        return JSON.parse(response.response); // parses JSON response into native JavaScript objects
+    }
+    mecmapi.prototype.addWorklog.exampleInputObject = {
+        tratimedif: 600000,
+        description: "logged by mecmapi extension",
+        name: "autolog-mecmapi",
+        umail: "Vladimir.Kanischev@softline.com"
+    };
+    tmp = {
+        "owner": {
+            "email_id": `user.mail@mail.com`/*,
+			      "id": "1856265534885993"*/
+        },
+        "description": `description`,
+        "mark_first_response": true,
+        "start_time": {
+            "value": 0000001
+        },
+        "end_time": {
+            "value": 00000002
+        },
+        "worklog_type": {
+            "name": `worklog_name`
+        }
+        // "include_nonoperational_hours": false,
+        // "other_charge": 1343434.4333,
+        // "recorded_time": {
+        //   "value": "1478758440000"
+        // },
+        // "tech_charge": 1343434.4333,
+    };
+
 
     return mecmapi;
 }));
